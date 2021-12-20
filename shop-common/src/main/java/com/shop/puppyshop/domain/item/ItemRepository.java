@@ -1,4 +1,4 @@
-package com.shop.puppyshop.item;
+package com.shop.puppyshop.domain.item;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

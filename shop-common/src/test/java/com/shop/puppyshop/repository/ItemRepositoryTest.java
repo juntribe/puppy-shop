@@ -1,8 +1,8 @@
 package com.shop.puppyshop.repository;
 
 
-import com.shop.puppyshop.item.Item;
-import com.shop.puppyshop.item.ItemRepository;
+import com.shop.puppyshop.domain.item.Item;
+import com.shop.puppyshop.domain.item.ItemRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

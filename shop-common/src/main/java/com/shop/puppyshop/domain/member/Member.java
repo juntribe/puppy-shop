@@ -1,4 +1,4 @@
-package com.shop.puppyshop.member;
+package com.shop.puppyshop.domain.member;
 
 import lombok.*;
 
@@ -19,6 +19,7 @@ public class Member {
 
     @Column
     private String email;
+
 
     public Member(String name, String email) {
         this.name = name;
