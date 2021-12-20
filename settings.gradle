@@ -1,0 +1,5 @@
+rootProject.name = 'puppy-shop'
+include 'shop-common'
+include 'shop-admin'
+include 'shop-customer'
+
