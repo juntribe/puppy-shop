@@ -1,6 +1,7 @@
 buildscript {
     ext {
         springBootVersion = '2.6.1'
+        queryDslVersion = '4.4.0'
     }
     repositories {
         mavenCentral()
@@ -20,6 +21,7 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
+
 
     sourceCompatibility = 11
 

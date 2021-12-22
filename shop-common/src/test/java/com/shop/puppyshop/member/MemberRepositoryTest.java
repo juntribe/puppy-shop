@@ -21,7 +21,7 @@ public class MemberRepositoryTest {
     @Test
     public void add () {
         Member member = new Member();
-        member.setEmail("test@BaseEntity.com");
+        member.setEmail("test@Do.com");
         member.setName("test");
         Member savedMember = memberRepository.save(member);
         System.out.println(savedMember.toString());

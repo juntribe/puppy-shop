@@ -1,17 +1,20 @@
 package com.shop.puppyshop.domain.item;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.shop.puppyshop.domain.base.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@ToString
-@Setter
-@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Table(name = "item")
 @Entity
-public class Item {
+public class Item extends BaseEntity {
 
     @Id
     @Column(name = "item_id")
@@ -20,17 +23,19 @@ public class Item {
 
     @Column(nullable = false,length = 50)
     private String itemNm; // 상품명
-//
-//    @Column(nullable = false)
-//    private int price; // 가격
-//
-//    @Column(nullable = false)
-//    private int stockNumber; // 재고수량
-//
-//    @Lob
-//    @Column(nullable = false)
-//    private String itemDetail;
-//
-//    @Enumerated(EnumType.STRING)
-//    private ItemSellStatus itemSellStatus;
+
+    @Column(nullable = false)
+    private int price; // 가격
+
+    @Column(nullable = false)
+    private int stockNumber; // 재고수량
+
+    @Lob
+    @Column(nullable = false)
+    private String itemDetail;
+
+    @Enumerated(EnumType.STRING)
+    private ItemSellStatus itemSellStatus; //상품 판매 상태
+
+
 }
