@@ -3,8 +3,7 @@ package com.shop.puppyshop.repository;
 
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.shop.puppyshop.domain.item.Item;
-import com.shop.puppyshop.domain.item.ItemRepository;
+import com.shop.puppyshop.entity.Item;
 import com.shop.puppyshop.domain.item.ItemSellStatus;
 import com.shop.puppyshop.domain.item.QItem;
 import org.junit.jupiter.api.DisplayName;

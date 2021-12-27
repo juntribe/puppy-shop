@@ -1,7 +1,7 @@
 package com.shop.puppyshop.member;
 
-import com.shop.puppyshop.domain.member.Member;
-import com.shop.puppyshop.domain.member.MemberRepository;
+import com.shop.puppyshop.entity.Member;
+import com.shop.puppyshop.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

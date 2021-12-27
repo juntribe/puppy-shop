@@ -1,4 +1,4 @@
-package com.shop.puppyshop.domain.member;
+package com.shop.puppyshop.entity;
 
 import lombok.*;
 

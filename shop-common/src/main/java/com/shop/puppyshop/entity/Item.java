@@ -1,6 +1,7 @@
-package com.shop.puppyshop.domain.item;
+package com.shop.puppyshop.entity;
 
 import com.shop.puppyshop.domain.base.BaseEntity;
+import com.shop.puppyshop.domain.item.ItemSellStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -22,7 +22,7 @@ subprojects {
     apply plugin: 'io.spring.dependency-management'
 
 
-    sourceCompatibility = 11
+
 
     dependencies {
         compileOnly 'org.projectlombok:lombok'
