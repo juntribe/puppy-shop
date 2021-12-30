@@ -1,4 +1,4 @@
-package com.shop.puppyshop.domain.base;
+package com.shop.puppyshop.constant;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @EntityListeners(value = {AuditingEntityListener.class})
 @Getter
-public abstract class BaseEntity {
+public abstract class BaseEntityTime {
 
     @CreatedDate
     @Column(name = "regtime", updatable = false)

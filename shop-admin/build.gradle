@@ -1,6 +1,0 @@
-dependencies {
-    implementation project(":shop-common")
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.1'
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.1'
-    implementation('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
-}

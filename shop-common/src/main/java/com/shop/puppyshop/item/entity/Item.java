@@ -1,21 +1,18 @@
-package com.shop.puppyshop.entity;
+package com.shop.puppyshop.item.entity;
 
-import com.shop.puppyshop.domain.base.BaseEntity;
-import com.shop.puppyshop.domain.item.ItemSellStatus;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.shop.puppyshop.constant.BaseEntityTime;
+import com.shop.puppyshop.constant.ItemSellStatus;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
 @Table(name = "item")
 @Entity
-public class Item extends BaseEntity {
+public class Item extends BaseEntityTime {
 
     @Id
     @Column(name = "item_id")
