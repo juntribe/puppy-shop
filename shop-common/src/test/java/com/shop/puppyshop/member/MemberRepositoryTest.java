@@ -27,17 +27,16 @@ public class MemberRepositoryTest {
     @Test
     public void createMember(){
         String password ="1234";
-        Member member = Member.builder()
-        .email("test@test.com")
-        .userId("test")
-        .name("테스트")
-        .phone(01012341234)
-        .zipcode("012345")
-        .address("서울시 마포구 합정동")
-        .addressDetail("상세주소")
-        .password(passwordEncoder.encode(password))
-        .role(Role.USER)
-        .build();
+        Member member = new Member();
+        member.setEmail("test2@test.com");
+        member.setUserId("test2");
+        member.setName("테스트1");
+        member.setPhone(01012341234);
+        member.setZipcode("012345");
+        member.setAddress("서울시 마포구 합정동");
+        member.setAddressDetail("상세주소");
+        member.setPassword(passwordEncoder.encode(password));
+        member.setRole(Role.USER);
         memberRepository.save(member);
 
     }

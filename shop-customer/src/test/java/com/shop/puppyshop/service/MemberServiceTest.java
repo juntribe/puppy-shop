@@ -2,16 +2,19 @@ package com.shop.puppyshop.service;
 
 import com.shop.puppyshop.member.dto.MemberFormDto;
 import com.shop.puppyshop.member.entity.Member;
+import groovy.util.logging.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
-@SpringBootTest
+@Slf4j
 @Transactional
+@SpringBootTest
 public class MemberServiceTest {
 
     @Autowired
@@ -51,5 +54,18 @@ public class MemberServiceTest {
         Assertions.assertEquals(member.getRole(),saveMember.getRole());
 
 
+    }
+
+    @Test
+    @DisplayName("중복 회원 가입 테스트")
+    public void saveDuplicateMemberTest(){
+        Member member1 = createMember();
+        Member member2 = createMember();
+
+        memberService.saveMember(member1);
+
+        Throwable throwable = Assertions.assertThrows(IllegalStateException.class,()->{
+            memberService.saveMember(member2);});
+        Assertions.assertEquals("이미 가입된 회원입니다", throwable.getMessage());
     }
 }

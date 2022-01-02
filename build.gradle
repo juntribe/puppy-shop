@@ -45,9 +45,11 @@ project(":shop-common"){
     }
 
     dependencies {
-        implementation 'junit:junit:4.13.1'
+        compile 'junit:junit:4.13.1'
+        // https://mvnrepository.com/artifact/javax.validation/validation-api
+        compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
         compile 'org.springframework.boot:spring-boot-starter-data-jpa'
-        implementation 'org.springframework.boot:spring-boot-starter-web:2.6.1'
+        compile 'org.springframework.boot:spring-boot-starter-web:2.6.1'
         compile 'org.springframework.boot:spring-boot-starter-security'
         compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
         runtimeOnly 'com.h2database:h2'
@@ -78,9 +80,8 @@ project(":shop-common"){
 
 project(":shop-customer"){
     dependencies {
-        implementation project(":shop-common")
+        compile project(":shop-common")
         implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.1'
-        implementation 'org.springframework.boot:spring-boot-starter-web:2.6.1'
         // https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect
         implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '3.0.0'
 
@@ -88,9 +89,8 @@ project(":shop-customer"){
 }
 project(":shop-admin"){
     dependencies {
-        implementation project(":shop-common")
+        compile project(":shop-common")
         implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.1'
-        implementation 'org.springframework.boot:spring-boot-starter-web:2.6.1'
         // https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect
         implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '3.0.0'
 

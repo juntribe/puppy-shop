@@ -9,16 +9,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.persistence.*;
 
 
-@AllArgsConstructor
-@NoArgsConstructor
 @ToString
-@Builder
-@Getter
+@Getter @Setter
 @Entity
-public class Member {
+public class Member  {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(unique = true)
@@ -46,17 +43,20 @@ public class Member {
     public static Member createMember(MemberFormDto memberFormDto, PasswordEncoder passwordEncoder){
 
 
-        return Member.builder()
-                .userId(memberFormDto.getUserId())
-                .password(passwordEncoder.encode(memberFormDto.getPassword()))
-                .name(memberFormDto.getName())
-                .email(memberFormDto.getEmail())
-                .phone(memberFormDto.getPhone())
-                .zipcode(memberFormDto.getZipcode())
-                .address(memberFormDto.getAddress())
-                .addressDetail(memberFormDto.getAddressDetail())
-                .role(Role.USER)
-                .build();
+       Member member = new Member();
+       member.setUserId(memberFormDto.getUserId());
+       member.setEmail(memberFormDto.getEmail());
+       member.setAddress(memberFormDto.getAddress());
+       member.setAddressDetail(memberFormDto.getAddressDetail());
+       member.setName(memberFormDto.getName());
+       member.setPhone(memberFormDto.getPhone());
+       member.setZipcode(memberFormDto.getZipcode());
+       member.setRole(Role.USER);
+       String password = passwordEncoder.encode(memberFormDto.getPassword());
+       member.setPassword(password);
+       return member;
+
+
     }
 
 
