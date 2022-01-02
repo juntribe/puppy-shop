@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<th:block layout:fragment="css">
+    <style>
+    .st{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .layout{
+
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .tb_1 tr {
+        border-bottom: 1px solid #ddd;
+    }
+    .tb_1 th {
+        padding: 10px 15px;
+        text-align: left;
+        background: #f5f5f5;
+    }
+    .tb_1 td {
+        padding: 10px 15px;
+    }
+    .button_list{
+        margin-top: 50px;
+        text-align: center;
+
+    }
+    .button_list button {
+        width: 150px;
+        margin-bottom: 100px;
+    }
+
+
+    @media screen and (max-width:768px) and (orientation: landscape){
+        .tb_1{
+            padding-top: 100px;
+            width: 70%;
+            table-layout: fixed;
+        }
+    }
+    .fieldError{
+        color: #bd2130;
+    }
+    </style>
+</th:block>
+
+
+<th:block layout:fragment="script">
+
+    <script th:inline="javascript">
+        $(document).ready(function (){
+            var errorMessage = [[${errorMessage}]];
+            console.log("dddd");
+            if (errorMessage != null){
+                alert(errorMessage);
+                console.log("????");
+            }
+            console.log(errorMessage);
+        })
+       function id_check(){
+           var errorMessage = [[${errorMessage}]];
+            alert(errorMessage);
+       }
+
+    </script>
+</th:block>
+
+<div layout:fragment="content">
+    <!-- Hero Section Begin -->
+    <div class="layout">
+<h2 class="st">회원가입</h2>
+
+    <form action="/member/join" role="form" method="post"
+          th:object="${memberFormDto}">
+
+        <table class="tb_1" align="center">
+        <colgroup>
+            <col width="150">
+            <col width="*">
+            <col width="150">
+            <col width="*">
+
+        </colgroup>
+            <tbody>
+
+            <tr>
+                <th><span>아이디</span></th>
+                <td colspan="3">
+                    <div class="form-group">
+                        <label>
+                            <input type="text" th:field="*{userId}" name="userId" placeholder="아이디를 입력해주세요" required>
+                            <button onclick="id_check()">중복체크</button>
+                        </label>
+                        <p th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" class="fieldError">userId Error</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+
+                <th><span>비밀번호</span></th>
+                <td>
+                    <div class="form-group">
+
+                        <label>
+                            <input type="password" th:field="*{password}" name="password" required>
+                        </label>
+                        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError">Incorrect data</p>
+                    </div>
+                </td>
+<!--                <th><span>비밀번호 확인</span></th>-->
+<!--                <td><input type="password"></td>-->
+
+
+            </tr>
+            <tr>
+                <th><span>이름</span></th>
+                <td>
+                    <div class="form-group">
+                        <label>
+                            <input type="text" th:field="*{name}" name="name" required>
+                        </label>
+                        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="fieldError">Incorrect data</p>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <th><span>이메일</span></th>
+                <td>
+                    <div class="form-group">
+                        <label>
+                            <input type="email" th:field="*{email}" name="email" required>
+                        </label>
+                        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError">Incorrect data</p>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <th><span>휴대폰 번호</span></th>
+                <td>
+                    <div class="form-group">
+                            <input type="text" class="phone_auth" name="phone" required>
+                        <a href="" class="btn btn-light">휴대폰 인증</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td>
+                    <div class="form-group">
+                        <label>
+                            <input type="text" size="10" style="margin-right: 5px" name="zipcode">
+                        </label>
+                        <a href="" class="btn btn-light">주소 검색</a> <br>
+                        <label>
+                            <input type="text" size="20" name="address">
+                        </label>
+                        <label>
+                        <input type="text" size="20" name="addressDetail">
+                    </label>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+
+        <div class="button_list">
+            <button class="btn btn-outline-dark" type="reset" onclick="location.href='/'">취소</button>
+            <button class="btn btn-primary" type="submit">가입</button>
+        </div>
+
+    </form>
+
+
+</div>
+
+</div>
+
+</html>

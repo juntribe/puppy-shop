@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Slf4j
+@RequestMapping("/member")
 @RequiredArgsConstructor
 @Controller
 public class MemberController {
@@ -32,12 +33,10 @@ public class MemberController {
     }
 
 
-    @PostMapping("/member/join")
+    @PostMapping("/join")
     public String join(@Valid MemberFormDto memberFormDto, BindingResult error,Model model){
 
-        log.info("Post join");
         if (error.hasErrors()){
-            System.out.println("실패");
             return "members/register";
         }
         try{
@@ -45,11 +44,8 @@ public class MemberController {
             memberService.saveMember(member);
         }catch (IllegalStateException e){
             model.addAttribute("errorMessage",e.getMessage());
-            System.out.println(e.getMessage());
             return "members/register";
         }
-
-        System.out.println("?????");
         return "redirect:/";
     }
 }
