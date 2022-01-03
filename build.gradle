@@ -28,7 +28,7 @@ subprojects {
         compileOnly 'org.projectlombok:lombok'
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
         annotationProcessor 'org.projectlombok:lombok'
-        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        testCompile('org.springframework.boot:spring-boot-starter-test') {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         }
     }
@@ -54,7 +54,7 @@ project(":shop-common"){
         compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
         runtimeOnly 'com.h2database:h2'
         runtimeOnly 'mysql:mysql-connector-java'
-        testImplementation 'org.springframework.security:spring-security-test'
+        testCompile 'org.springframework.security:spring-security-test'
 
         implementation("com.querydsl:querydsl-core") // querydsl
         implementation("com.querydsl:querydsl-jpa") // querydsl

@@ -4,7 +4,6 @@ import com.shop.puppyshop.member.dto.MemberFormDto;
 import com.shop.puppyshop.member.entity.Member;
 import com.shop.puppyshop.service.MemberService;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Slf4j
-@RequestMapping("/member")
+@RequestMapping("/members")
 @RequiredArgsConstructor
 @Controller
 public class MemberController {
@@ -48,4 +47,17 @@ public class MemberController {
         }
         return "redirect:/";
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return "members/loginForm";
+    }
+
+    @GetMapping("/login/error")
+    public String loginError(Model model){
+        model.addAttribute("loginErrorMsg","아이디 또는 비밀번호를 확인해주세요");
+        return "members/loginForm";
+    }
+
+
 }

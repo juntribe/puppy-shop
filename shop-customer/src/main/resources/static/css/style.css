@@ -83,7 +83,7 @@ p {
 }
 
 img {
-	max-width: 100%;
+	max-width: 90%;
 }
 
 input:focus,
@@ -325,6 +325,7 @@ ol {
 }
 
 .header__top__left p {
+	display: none;
 	color: #ffffff;
 	margin-bottom: 0;
 }
@@ -335,7 +336,7 @@ ol {
 
 .header__top__links {
 	display: inline-block;
-	margin-right: 25px;
+	/*margin-right: 1px;*/
 }
 
 .header__top__links a {
@@ -404,7 +405,7 @@ ol {
 }
 
 .header__logo {
-	padding: 30px 0;
+	padding: 10px 0;
 }
 
 .header__logo a {
