@@ -25,9 +25,10 @@ public class MemberController {
 
     private final PasswordEncoder passwordEncoder;
 
-    @GetMapping("/join")
+    @GetMapping("/new")
     public String join(Model model){
         model.addAttribute("memberFormDto",new MemberFormDto());
+        System.out.println("New Start");
         return "members/register";
     }
 
@@ -35,14 +36,18 @@ public class MemberController {
     @PostMapping("/join")
     public String join(@Valid MemberFormDto memberFormDto, BindingResult error,Model model){
 
+        System.out.println("Join Start");
         if (error.hasErrors()){
+            log.info("Error");
             return "members/register";
         }
         try{
             Member member = Member.createMember(memberFormDto,passwordEncoder);
+            System.out.println("Success Create!!");
             memberService.saveMember(member);
         }catch (IllegalStateException e){
             model.addAttribute("errorMessage",e.getMessage());
+            System.out.println("Faild Create");
             return "members/register";
         }
         return "redirect:/";

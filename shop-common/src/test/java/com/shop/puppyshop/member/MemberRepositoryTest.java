@@ -4,6 +4,7 @@ import com.shop.puppyshop.constant.Role;
 import com.shop.puppyshop.member.dto.MemberFormDto;
 import com.shop.puppyshop.member.entity.Member;
 import com.shop.puppyshop.member.repository.MemberRepository;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -39,6 +40,17 @@ public class MemberRepositoryTest {
         member.setRole(Role.USER);
         memberRepository.save(member);
 
+    }
+    @Test
+    @DisplayName("어드민 생성 테스트")
+    public void createAdmin(){
+        String password ="admin";
+        Member member = new Member();
+        member.setUserId("admin");
+        member.setPassword(passwordEncoder.encode(password));
+        member.setName("관리자");
+        member.setRole(Role.ADMIN);
+        memberRepository.save(member);
     }
 
 }

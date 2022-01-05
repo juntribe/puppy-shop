@@ -36,7 +36,6 @@ subprojects {
 
 project(":shop-common"){
 
-
     bootJar {
         enabled =false
     }
@@ -84,7 +83,7 @@ project(":shop-customer"){
         implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.1'
         // https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect
         implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '3.0.0'
-
+        testCompile 'org.springframework.security:spring-security-test'
     }
 }
 project(":shop-admin"){
