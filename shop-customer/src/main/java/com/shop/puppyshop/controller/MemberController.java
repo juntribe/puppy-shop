@@ -1,7 +1,7 @@
 package com.shop.puppyshop.controller;
 
-import com.shop.puppyshop.member.dto.MemberFormDto;
-import com.shop.puppyshop.member.entity.Member;
+import com.shop.puppyshop.member.MemberFormDto;
+import com.shop.puppyshop.member.Member;
 import com.shop.puppyshop.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

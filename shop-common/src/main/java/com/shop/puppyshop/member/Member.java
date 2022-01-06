@@ -1,8 +1,6 @@
-package com.shop.puppyshop.member.entity;
+package com.shop.puppyshop.member;
 
-import com.shop.puppyshop.constant.BaseEntityTime;
 import com.shop.puppyshop.constant.Role;
-import com.shop.puppyshop.member.dto.MemberFormDto;
 import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 

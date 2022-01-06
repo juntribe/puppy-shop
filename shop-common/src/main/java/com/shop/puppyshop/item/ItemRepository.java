@@ -1,6 +1,6 @@
-package com.shop.puppyshop.item.repository;
+package com.shop.puppyshop.item;
 
-import com.shop.puppyshop.item.entity.Item;
+import com.shop.puppyshop.item.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

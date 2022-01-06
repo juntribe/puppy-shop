@@ -1,4 +1,4 @@
-package com.shop.puppyshop.admin.dto;
+package com.shop.puppyshop.admin;
 
 import lombok.Getter;
 import lombok.Setter;

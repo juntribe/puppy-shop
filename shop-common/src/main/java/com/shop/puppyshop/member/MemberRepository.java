@@ -1,6 +1,6 @@
-package com.shop.puppyshop.member.repository;
+package com.shop.puppyshop.member;
 
-import com.shop.puppyshop.member.entity.Member;
+import com.shop.puppyshop.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MemberRepository extends JpaRepository<Member,Long> {

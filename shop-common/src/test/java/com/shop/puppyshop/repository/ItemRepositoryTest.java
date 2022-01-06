@@ -4,14 +4,13 @@ package com.shop.puppyshop.repository;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.shop.puppyshop.constant.ItemSellStatus;
-import com.shop.puppyshop.item.entity.Item;
-import com.shop.puppyshop.item.entity.QItem;
-import com.shop.puppyshop.item.repository.ItemRepository;
+import com.shop.puppyshop.item.Item;
+import com.shop.puppyshop.item.ItemRepository;
+import com.shop.puppyshop.item.QItem;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import javax.persistence.EntityManager;

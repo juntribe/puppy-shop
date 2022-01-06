@@ -1,9 +1,6 @@
 package com.shop.puppyshop.member;
 
 import com.shop.puppyshop.constant.Role;
-import com.shop.puppyshop.member.dto.MemberFormDto;
-import com.shop.puppyshop.member.entity.Member;
-import com.shop.puppyshop.member.repository.MemberRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

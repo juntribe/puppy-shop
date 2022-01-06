@@ -1,4 +1,4 @@
-package com.shop.puppyshop.item.entity;
+package com.shop.puppyshop.item;
 
 import com.shop.puppyshop.constant.BaseEntityTime;
 import com.shop.puppyshop.constant.ItemSellStatus;
@@ -24,6 +24,7 @@ public class Item extends BaseEntityTime {
 
     @Column(nullable = false)
     private int price; // 가격
+
 
     @Column(nullable = false)
     private int stockNumber; // 재고수량

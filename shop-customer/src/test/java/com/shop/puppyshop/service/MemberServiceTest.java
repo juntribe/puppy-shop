@@ -1,7 +1,7 @@
 package com.shop.puppyshop.service;
 
-import com.shop.puppyshop.member.dto.MemberFormDto;
-import com.shop.puppyshop.member.entity.Member;
+import com.shop.puppyshop.member.MemberFormDto;
+import com.shop.puppyshop.member.Member;
 import groovy.util.logging.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j

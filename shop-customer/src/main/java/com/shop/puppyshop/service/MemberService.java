@@ -1,7 +1,7 @@
 package com.shop.puppyshop.service;
 
-import com.shop.puppyshop.member.entity.Member;
-import com.shop.puppyshop.member.repository.MemberRepository;
+import com.shop.puppyshop.member.Member;
+import com.shop.puppyshop.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
