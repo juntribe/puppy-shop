@@ -83,7 +83,8 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="header__top__right">
                                 <div class="header__top__right__auth">
-                                    <a href="/members/login"><i class="fa fa-user"></i> 로그인</a>
+                                    <a href="/members/login" sec:authorize="isAnonymous()"><i class="fa fa-user"></i> 로그인</a>
+                                    <a href="/members/logout" sec:authorize="isAuthenticated()"><i class="fa fa-user"></i> 로그아웃</a>
                                 </div>
                                 <div class="header__top__right__mypage">
                                     <div>마이페이지</div>

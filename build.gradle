@@ -51,10 +51,12 @@ project(":shop-common"){
         compile 'org.springframework.boot:spring-boot-starter-web:2.6.1'
         compile 'org.springframework.boot:spring-boot-starter-security'
         compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+        // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+        implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.4.4'
+
         runtimeOnly 'com.h2database:h2'
         runtimeOnly 'mysql:mysql-connector-java'
         testCompile 'org.springframework.security:spring-security-test'
-
         implementation("com.querydsl:querydsl-core") // querydsl
         implementation("com.querydsl:querydsl-jpa") // querydsl
         annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa" // querydsl JPAAnnotationProcessor 사용 지정

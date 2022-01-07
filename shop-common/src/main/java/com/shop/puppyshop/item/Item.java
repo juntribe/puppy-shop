@@ -19,8 +19,15 @@ public class Item extends BaseEntityTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "item_code")
+    private String code;
+
     @Column(nullable = false,length = 50)
     private String itemNm; // 상품명
+
+    private String type;
+
+    private String brand;
 
     @Column(nullable = false)
     private int price; // 가격
