@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+<th:block layout:fragment="css">
+    <style>
+    body{
+        background-color: white;
+    }
+
+        .st{
+            margin-top: 10px;
+            margin-bottom: 50px;
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #ddd ;
+        }
+        .itb_1{
+
+            padding-top: 100px;
+            width: 100%;
+            height: 670px;
+            margin-bottom: 200px;
+
+        }
+
+        .itb_1 tr {
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+
+        }
+        .itb_1 th {
+            padding: 10px 15px;
+            text-align: left;
+            background: #f5f5f5;
+        }
+        .itb_1 td {
+            padding: 10px 15px;
+            text-align: left;
+        }
+        .button_list{
+            margin-top: 50px;
+            text-align: center;
+
+        }
+        .button_list button {
+            width: 150px;
+            margin-bottom: 100px;
+        }
+        .ck.ck-editor {
+            width: 600px;
+            max-height: 400px;
+        }
+        .ck.ck-content {
+            height: 200px;
+            overflow-y: scroll;
+        }
+
+
+    </style>
+</th:block>
+
+<th:block layout:fragment="script">
+
+    <script th:inline="javascript">
+
+        $(document).ready(function () {
+            ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then( editor => {
+                console.log(editor);
+            })
+            .catch( error =>{
+                console.error(error);
+            })
+
+
+        })
+
+
+
+    </script>
+</th:block>
+
+
+<div layout:fragment="content">
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+
+        <h3 class="st"><strong>상품입력</strong></h3>
+        <form action="" role="form" method="post" enctype="multipart/form-data" th:object="${itemFormDto}">
+            <input type="hidden" th:field="*{id}">
+            <table class="itb_1">
+                <colgroup>
+                    <col width="160">
+                    <col width="*">
+
+                </colgroup>
+
+                <tbody>
+                <tr>
+                    <th><span>상품코드</span></th>
+                    <td colspan="3">
+                        <input type="text" th:field="*{code}">
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>상품명</span></th>
+                    <td colspan="3">
+                        <input type="text" th:field="*{itemNm}" placeholder="상품명을 입력해주세요">
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>기본설명</span></th>
+                    <td colspan="3">
+                        <textarea th:field="*{itemDetail}" id="editor"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>가격</span></th>
+                    <td colspan="3">
+                        <input type="text" th:field="*{price}">
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>재고</span></th>
+                    <td colspan="3">
+                        <input type="text" th:field="*{stockNumber}">
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>판매상태</span></th>
+                    <td colspan="3">
+                        <select th:field="*{itemSellStatus}">
+                        <option value="SELL">판매중</option>
+                        <option value="SOLD_OUT">품절</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>상품유형</span></th>
+                    <td colspan="3">
+                        <input type="checkbox" th:field="*{type1}" th:value="히트">히트
+                        <input type="checkbox" name="type2" th:value="추천">추천
+                        <input type="checkbox" name="type3" th:value="신상품">신상품
+                        <input type="checkbox" name="type4" th:value="인기">인기
+                        <input type="checkbox" name="type5" th:value="할인">할인
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>제조사</span></th>
+                    <td colspan="3">
+                        <input type="text" th:field="*{maker}">
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>원산지</span></th>
+                    <td colspan="3">
+                        <input type="text" th:field="*{origin}">
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>브랜드</span></th>
+                    <td colspan="3">
+                        <input type="text" th:field="*{brand}">
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>모델</span></th>
+                    <td colspan="3">
+                        <input type="text" th:field="*{model}">
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>옵션</span></th>
+                    <td colspan="3">
+                        <div class="">
+                            옵션1<input type="text" th:field="*{optionSubject}">
+                            옵션1 항목<input type="text" name="code">
+                        </div>
+                        <div class="">
+                            옵션2<input type="text" name="code">
+                            옵션2 항목<input type="text" name="code">
+                        </div>
+                        <div class="">
+                            옵션3<input type="text" name="code">
+                            옵션3 항목<input type="text" name="code">
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>추가옵션</span></th>
+                    <td colspan="3">
+                        <div class="">
+                            옵션1<input type="text" th:field="*{supplySubject}">
+                            옵션1 항목<input type="text" name="code">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>메인이미지</span></th>
+                    <td colspan="3">
+                        <div class="">
+                            <input type="file" name="itemImgFile">
+                            <label th:text="상품이미지 + ${num}"></label>
+<!--                            <input type="hidden" name="itemImgIds" th:value="${itemImgDto.id}">-->
+<!--                            <label class="custom-file-label" th:text="${not #strings.isEmpty(itemImgDto.oriImgName)}?${itemImgDto.oriImgName} : '상품이미지' + ${status.index+1}"></label>-->
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><span>이미지</span></th>
+                    <td colspan="3">
+                        <div class="">
+                            <input type="file">
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </form>
+
+
+</div>
+
+</div>
+
+</html>

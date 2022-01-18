@@ -754,6 +754,7 @@ a.label:hover, a.label:focus {
   text-decoration: none; }
 
 .sidebar {
+  border-right: 1px solid #ddd;
   display: block;
   padding: 0;
   display: none;
