@@ -2,17 +2,13 @@ package com.shop.puppyshop.item;
 
 import com.shop.puppyshop.constant.BaseEntityTime;
 import com.shop.puppyshop.constant.ItemSellStatus;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+
+@Setter
 @Getter
 @Table(name = "item")
 @Entity
@@ -26,7 +22,7 @@ public class Item extends BaseEntityTime {
     @Column(name = "item_code")
     private String code;
 
-    @Column(nullable = false,length = 50)
+//    @Column(nullable = false,length = 50)
     private String itemNm; // 상품명
 
     private String maker; //제조사
@@ -54,15 +50,15 @@ public class Item extends BaseEntityTime {
     @ColumnDefault("0")
     private Byte type5; // 상품유형 할인
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private int price; // 가격
 
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private int stockNumber; // 재고수량
 
     @Lob
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String itemDetail;
 
     @Enumerated(EnumType.STRING)

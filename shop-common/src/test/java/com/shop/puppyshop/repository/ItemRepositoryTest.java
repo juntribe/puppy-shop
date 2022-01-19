@@ -32,13 +32,13 @@ public class ItemRepositoryTest {
     public void createItemTest(){
 
         IntStream.rangeClosed(1,10).forEach(i ->{
-            Item item = Item.builder()
-                    .itemNm("테스트 상품" +i)
-                    .price(10000+i)
-                    .itemDetail("테스트 상품 상세 설명" +i)
-                    .itemSellStatus(ItemSellStatus.SELL)
-                    .stockNumber(100)
-                    .build();
+            Item item = new Item();
+                    item.setItemNm("테스트 상품"+i);
+                    item.setPrice(10000+i);
+                    item.setItemDetail("테스트 상품 상세 설명" +i);
+                    item.setItemSellStatus(ItemSellStatus.SELL);
+                    item.setStockNumber(100);
+
             itemRepository.save(item);
 
         });

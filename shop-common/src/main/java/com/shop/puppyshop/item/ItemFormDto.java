@@ -1,5 +1,6 @@
 package com.shop.puppyshop.item;
 
+import com.shop.puppyshop.constant.BaseEntityTime;
 import com.shop.puppyshop.constant.ItemSellStatus;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,14 +15,14 @@ import java.util.List;
 
 @Setter
 @Getter
-public class ItemFormDto {
+public class ItemFormDto extends BaseEntityTime {
 
     private Long id;
 
-    @NotNull(message = "상품명은 필수 입력 값입니다")
+//    @NotNull(message = "상품명은 필수 입력 값입니다")
     private String itemNm;
 
-    @NotNull(message = "가격은 필수 입력 값입니다.")
+//    @NotNull(message = "가격은 필수 입력 값입니다.")
     private Integer price;
 
     private String code;
@@ -49,7 +50,7 @@ public class ItemFormDto {
 
     private Byte type5; // 상품유형 할인
 
-    @NotNull(message = "재고는 필수 입력 값입니다")
+//    @NotNull(message = "재고는 필수 입력 값입니다")
     private int stockNumber; // 재고수량
 
     private String itemDetail;

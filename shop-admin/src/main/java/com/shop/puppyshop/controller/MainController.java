@@ -1,9 +1,12 @@
 package com.shop.puppyshop.controller;
 
+import com.shop.puppyshop.admin.AdminFormDto;
+import com.shop.puppyshop.member.MemberFormDto;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,7 +24,8 @@ public class MainController {
     }
 
     @GetMapping("/admin")
-    public String main(){
+    public String main(Model model){
+        model.addAttribute("adminFormDto",new MemberFormDto());
         return "main";
     }
 }

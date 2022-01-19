@@ -3,8 +3,6 @@ package com.shop.puppyshop.cart;
 import com.shop.puppyshop.member.Member;
 import com.shop.puppyshop.member.MemberFormDto;
 import com.shop.puppyshop.member.MemberRepository;
-import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestPropertySource(locations = "classpath:application-test.properties")
 @Transactional
